@@ -161,11 +161,25 @@ function _rhoCB73(x::Float64)
     return (x^(2) - 1.0)/(x^(2) + 1.0) # Value of rho
 end
 
+"""
+_ClnCB73(alpha, n, rho)
+Definition of the Gegenbauer polynomials.
 
-"""_ClnCB73(alpha,n,rho)
-Definition of the Gegenbauer polynomials
-These coefficients are computed through an upward recurrence
-@IMPROVE compute all the basis elements (n)_{1<=n<=nradial} at once
+This function computes the Gegenbauer polynomial coefficients using an upward recurrence method.
+
+## Arguments
+- `alpha::Float64`: The alpha parameter of the Gegenbauer polynomial.
+- `n::Int64`: The order of the Gegenbauer polynomial.
+- `rho::Float64`: The value at which to evaluate the Gegenbauer polynomial.
+
+## Returns
+- `v::Float64`: The value of the Gegenbauer polynomial at `rho` and order `n`.
+
+## Notes
+- The coefficients are computed through an upward recurrence.
+- The initial values for `n=0` and `n=1` are pre-defined.
+- The recurrence relation is applied iteratively until the desired order `n` is reached.
+
 """
 function _ClnCB73(alpha::Float64,n::Int64,rho::Float64)
 
